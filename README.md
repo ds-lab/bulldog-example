@@ -12,5 +12,5 @@ Simply use the Gradle wrapper to compile the sources and produce a runnable JAR 
    $ ./gradlew shadowJar
        ..snip..
        
-   $ java -jar build/libs/bulldog-test-all.jar
+   $ java -jar build/libs/bulldog-example-all.jar
 ```
