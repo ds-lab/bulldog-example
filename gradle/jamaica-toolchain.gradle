@@ -1,0 +1,24 @@
+/*
+ * Set up Java compilation and test execution using the
+ * JamaicaVM Java toolchain.
+ *
+ * You may have to adjust the javacPath/jvmPath properties in the root
+ * gradle.properties file according to your local installation.
+ *
+ * Author: Adrian Rumpold (a.rumpold@ds-lab.org)
+ */
+
+compileJava {
+  options.fork = true
+  options.forkOptions.executable = project.property('javacPath')
+}
+
+compileTestJava {
+  options.fork = true
+  options.forkOptions.executable = project.property('javacPath')
+}
+
+test {
+  reports.html.enabled = true
+  executable = project.property('jvmPath')
+}

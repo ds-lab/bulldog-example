@@ -5,18 +5,23 @@ plugins {
 apply plugin: 'java'
 apply plugin: 'application'
 
+// Settings for building with the JamaicaVM toolchain -- enable with Gradle flag -Prtsj 
+if (project.hasProperty('rtsj')) {
+	apply from: "$rootDir/gradle/jamaica-toolchain.gradle"
+}
+
 mainClassName = 'bulldog.BulldogTest'
 
 repositories {
+	maven {
+		url 'https://oss.sonatype.org/content/repositories/snapshots/'
+	}
     jcenter()
 }
 
 dependencies {
-    def bulldogVersion = "0.2.1"
-	compile "io.silverspoon:bulldog-core:${bulldogVersion}"
-	compile "io.silverspoon:bulldog-linux:${bulldogVersion}"
-	compile "io.silverspoon:bulldog-devices:${bulldogVersion}"
-	compile "io.silverspoon:bulldog-board-raspberrypi:${bulldogVersion}"
+	// We have bundled a development version of Bulldog that works with the new RPi 3B+
+	compile fileTree(dir: 'lib', include: '**/*.jar')
 	
 	compile 'org.slf4j:slf4j-simple:1.7.25'
 

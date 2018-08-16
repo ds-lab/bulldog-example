@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>bulldog-test</name>
+	<name>bulldog-example</name>
 	<comment>Project bulldog-test created by Buildship.</comment>
 	<projects>
 	</projects>
@@ -17,6 +17,7 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
+		<nature>com.aicas.jamaica.eclipse.launcher.jamaicavmnature</nature>
 		<nature>org.eclipse.buildship.core.gradleprojectnature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
